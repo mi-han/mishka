@@ -23,5 +23,5 @@ font-family: 'PT Sans', Arial, sans-serif;
   background: #444444;
 }
 .button:active {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.3);
 }
