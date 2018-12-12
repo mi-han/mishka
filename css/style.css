@@ -168,12 +168,18 @@ font-family: 'PT Sans', Arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
+.header__main-list--hidden {
+  display: none;
+}
 @media (min-width: 768px) {
   .header__main-list {
     width: 420px;
     order: 2;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .header__main-list--hidden {
+    display: flex;
   }
 }
 @media (min-width: 1200px) {
@@ -233,10 +239,16 @@ font-family: 'PT Sans', Arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
+.header__user-list--hidden {
+  display: none;
+}
 @media (min-width: 768px) {
   .header__user-list {
     order: 1;
     flex-direction: row;
+  }
+  .header__user-list--hidden {
+    display: flex;
   }
 }
 @media (min-width: 1200px) {

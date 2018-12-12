@@ -159,6 +159,9 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
+    &--hidden {
+        display: none;
+    }
 }
 // планшет
 @media (min-width: @tablet-width) {
@@ -167,6 +170,9 @@
         order: 2;
         flex-direction: row;
         flex-wrap: wrap;
+        &--hidden {
+            display: flex;
+        }
     }
 }
 // десктоп
@@ -238,12 +244,18 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
+    &--hidden {
+        display: none;
+    }
 }
 // планшет
 @media (min-width: @tablet-width) {
     .header__user-list {
         order: 1;
         flex-direction: row;
+        &--hidden {
+            display: flex;
+        }
     }
 }
 // десктоп
