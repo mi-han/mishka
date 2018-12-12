@@ -1,0 +1,20 @@
+.wrapper {
+    width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 78px;
+}
+
+// Стили для планшетной версии
+@media (min-width: @tablet-width) {
+    .wrapper {
+        width: 668px;
+    }
+}
+
+// Стили для десктопной версии
+@media (min-width: @desktop-width) {
+    .wrapper {
+        width: 1050px;
+    }
+}
