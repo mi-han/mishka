@@ -1,0 +1,159 @@
+.goods-of-week {
+    position: relative;
+    width: 260px;
+    margin: 0 auto 36px auto;
+    display: flex;
+    flex-direction: column;
+}
+.goods-of-week__header-block {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+}
+.goods-of-week__header {
+    margin: 0;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 800;
+}
+.goods-of-week__label {
+    margin-top: 4px;
+    font-size: 17px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #63d1bb;
+}
+.goods-of-week__text-about {
+    margin: 0;
+    margin-top: 24px;
+    font-size: 15px;
+    line-height: 24px;
+}
+.goods-of-week__table-spec {
+    margin-top: 17px;
+    width: 100%;
+    font-size: 15px;
+    line-height: 20px;
+    border-collapse: collapse;
+    font-weight: 400;
+}
+.goods-of-week__table-line {
+    border-bottom: 1px solid #ececec;
+    height: 40px;
+    vertical-align: middle;
+}
+.goods-of-week__table-label {
+    width: 95px;
+}
+.goods-of-week__price {
+    margin: 0;
+    margin-top: 341px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 24px;
+    color: #444444;
+    min-height: 75px;
+    padding: 25px 0;
+    box-sizing: border-box;
+    font-weight: 800;
+}
+.goods-of-week__image {
+    z-index: 2;
+    position: absolute;
+    width: 260px;
+    height: 315px;
+    bottom: 127px;
+    background: rgba(255, 0, 255, 0.1);
+}
+
+// планшет
+@media (min-width: @tablet-width) {
+    .goods-of-week {
+        width: 668px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 53px;
+    }
+    .goods-of-week__header-block {
+        margin-top: 45px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .goods-of-week__header {
+        width: 500px;
+        margin-left: -3px; // Фикс для шрифта (делает сам отступ слева)
+        font-size: 43px;
+        line-height: 50px;
+    }
+    .goods-of-week__label {
+        margin-top: 8px; // правильнее бы было убрать (но оставим как в макете)
+        width: 126px;
+        text-align: center;
+        line-height: 17px;
+    }
+    .goods-of-week__desc-block {
+        box-sizing: border-box;
+        padding-right: 44px;
+        margin-top: 26px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .goods-of-week__text-about {
+        font-size: 17px;
+        line-height: 30px;
+    }
+    .goods-of-week__table-spec {
+        margin-top: 35px;
+    }
+    .goods-of-week__image {
+        margin-top: 58px;
+        position: relative;
+        bottom: auto;
+        width: 50%;
+        height: 403px;
+    }
+    .goods-of-week__price {
+        margin-top: auto;
+        font-size: 20px;
+        line-height: 24px;
+        min-height: 83px;
+    }
+}
+
+// десктоп
+@media (min-width: @desktop-width) {
+    .goods-of-week {
+        width: 1050px;
+    }
+    .goods-of-week__header-block {
+        position: absolute;
+        width: 100%;
+        top: 78px;
+        flex-direction: row-reverse;
+        margin-left: -5px;
+    }
+    .goods-of-week__header {
+        width: 875px;
+        font-size: 53px;
+        line-height: 57px;
+    }
+    .goods-of-week__label {
+        padding: 0px 25px;
+        width: 175px;
+        box-sizing: border-box;
+    }
+    .goods-of-week__desc-block {
+        padding: 180px 58px 0 175px; 
+    }
+    .goods-of-week__table-spec {
+        margin-top: 46px;
+    }
+    .goods-of-week__image {
+        margin-top: 70px;
+        height: 636px;
+    }
+}

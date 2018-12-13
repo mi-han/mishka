@@ -4,9 +4,9 @@
     background-color: #f9f9f9;
     background-image: url(../../img/home-background.jpg);
     background-repeat: no-repeat;
-    background-position: center -20px;
-    min-height: 488px;
-    background-size: 580px;
+    background-position: center -18px;
+    min-height: 478px;
+    background-size: 575px;
     display: flex;
     flex-direction: column;
 }
@@ -22,7 +22,9 @@
     white-space: nowrap;
 }
 .house__list {
-    margin: auto 0px 0px 0px;
+    // margin: auto 0px 0px 0px; в идеале, но не работает в IE11
+    margin: 0;
+    margin-top: 123px;
     padding: 0;
     list-style-type: none;
     display: flex;
@@ -93,8 +95,10 @@
     }
     .house__list {
         width: 668px;
-        margin: auto auto 0px auto;
+        // margin: auto auto 0px auto; в идеале, но не работает в IE11
+        margin: 374px auto 0 auto;
         flex-direction: row;
+
     }
     .house__item {
         height: 118px;
@@ -130,6 +134,7 @@
         line-height: 57px;
     }
     .house__list { 
+        margin: 361px auto 0 auto;
         width: 1050px;
     }
     .house__link {

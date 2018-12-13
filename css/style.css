@@ -359,14 +359,17 @@ font-family: 'PT Sans', Arial, sans-serif;
 .content__house {
   background-color: #f9f9f9;
 }
+.content__good-of-week {
+  background-color: #ffffff;
+}
 .house {
   padding: 0;
   background-color: #f9f9f9;
   background-image: url(../../img/home-background.jpg);
   background-repeat: no-repeat;
-  background-position: center -20px;
-  min-height: 488px;
-  background-size: 580px;
+  background-position: center -18px;
+  min-height: 478px;
+  background-size: 575px;
   display: flex;
   flex-direction: column;
 }
@@ -382,7 +385,8 @@ font-family: 'PT Sans', Arial, sans-serif;
   white-space: nowrap;
 }
 .house__list {
-  margin: auto 0px 0px 0px;
+  margin: 0;
+  margin-top: 123px;
   padding: 0;
   list-style-type: none;
   display: flex;
@@ -447,7 +451,7 @@ font-family: 'PT Sans', Arial, sans-serif;
   }
   .house__list {
     width: 668px;
-    margin: auto auto 0px auto;
+    margin: 374px auto 0 auto;
     flex-direction: row;
   }
   .house__item {
@@ -478,6 +482,7 @@ font-family: 'PT Sans', Arial, sans-serif;
     line-height: 57px;
   }
   .house__list {
+    margin: 361px auto 0 auto;
     width: 1050px;
   }
   .house__link {
@@ -487,19 +492,174 @@ font-family: 'PT Sans', Arial, sans-serif;
     line-height: 30px;
   }
 }
+.goods-of-week {
+  position: relative;
+  width: 260px;
+  margin: 0 auto 36px auto;
+  display: flex;
+  flex-direction: column;
+}
+.goods-of-week__header-block {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.goods-of-week__header {
+  margin: 0;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 800;
+}
+.goods-of-week__label {
+  margin-top: 4px;
+  font-size: 17px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #63d1bb;
+}
+.goods-of-week__text-about {
+  margin: 0;
+  margin-top: 24px;
+  font-size: 15px;
+  line-height: 24px;
+}
+.goods-of-week__table-spec {
+  margin-top: 17px;
+  width: 100%;
+  font-size: 15px;
+  line-height: 20px;
+  border-collapse: collapse;
+  font-weight: 400;
+}
+.goods-of-week__table-line {
+  border-bottom: 1px solid #ececec;
+  height: 40px;
+  vertical-align: middle;
+}
+.goods-of-week__table-label {
+  width: 95px;
+}
+.goods-of-week__price {
+  margin: 0;
+  margin-top: 341px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 24px;
+  color: #444444;
+  min-height: 75px;
+  padding: 25px 0;
+  box-sizing: border-box;
+  font-weight: 800;
+}
+.goods-of-week__image {
+  z-index: 2;
+  position: absolute;
+  width: 260px;
+  height: 315px;
+  bottom: 127px;
+  background: rgba(255, 0, 255, 0.1);
+}
+@media (min-width: 768px) {
+  .goods-of-week {
+    width: 668px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 53px;
+  }
+  .goods-of-week__header-block {
+    margin-top: 45px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .goods-of-week__header {
+    width: 500px;
+    margin-left: -3px;
+    font-size: 43px;
+    line-height: 50px;
+  }
+  .goods-of-week__label {
+    margin-top: 8px;
+    width: 126px;
+    text-align: center;
+    line-height: 17px;
+  }
+  .goods-of-week__desc-block {
+    box-sizing: border-box;
+    padding-right: 44px;
+    margin-top: 26px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  .goods-of-week__text-about {
+    font-size: 17px;
+    line-height: 30px;
+  }
+  .goods-of-week__table-spec {
+    margin-top: 35px;
+  }
+  .goods-of-week__image {
+    margin-top: 58px;
+    position: relative;
+    bottom: auto;
+    width: 50%;
+    height: 403px;
+  }
+  .goods-of-week__price {
+    margin-top: auto;
+    font-size: 20px;
+    line-height: 24px;
+    min-height: 83px;
+  }
+}
+@media (min-width: 1200px) {
+  .goods-of-week {
+    width: 1050px;
+  }
+  .goods-of-week__header-block {
+    position: absolute;
+    width: 100%;
+    top: 78px;
+    flex-direction: row-reverse;
+    margin-left: -5px;
+  }
+  .goods-of-week__header {
+    width: 875px;
+    font-size: 53px;
+    line-height: 57px;
+  }
+  .goods-of-week__label {
+    padding: 0px 25px;
+    width: 175px;
+    box-sizing: border-box;
+  }
+  .goods-of-week__desc-block {
+    padding: 180px 58px 0 175px;
+  }
+  .goods-of-week__table-spec {
+    margin-top: 46px;
+  }
+  .goods-of-week__image {
+    margin-top: 70px;
+    height: 636px;
+  }
+}
 .button {
   display: inline-block;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 17px;
   line-height: 20px;
-  height: 50px;
+  height: 51px;
   text-transform: uppercase;
   border: 2px solid #444444;
   background: #ffffff;
   font-weight: 700;
   color: #444444;
   width: 100%;
-  max-width: 288px;
+  box-sizing: border-box;
   cursor: pointer;
 }
 .button:hover,
