@@ -2,48 +2,10 @@
 .header {
     background-color: #ffffff;
 }
-// планшет
-@media (min-width: @tablet-width) {
-    .header {
-        background-color: #ffffff;
-        background-image: linear-gradient(
-            to bottom,
-            #ffffff,
-            #ffffff 88px,
-            #e7e7e7 88px,
-            #e7e7e7 89px,
-            #f9f9f9 89px
-        )
-    }
-}
-
-// мобильная
 .header__nav {
     display: flex;
     flex-direction: column;
 }
-// планшет
-@media (min-width: @tablet-width) {
-    .header__nav {
-        flex-direction: row;
-        width: 668px;
-        margin-left: auto;
-        margin-right: auto;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-}
-// десктоп
-@media (min-width: @desktop-width) {
-    .header__nav {
-        width: 1050px;
-    }
-}
-
-//////////////////////
-// ЭЛЕМЕНТ header-logo
-
-// мобильная
 .header__logo {
     height: 79px;
     border-top: 1px solid #ececec;
@@ -52,25 +14,6 @@
     box-sizing: border-box;
     position: relative;
 }
-// планшет
-@media (min-width: @tablet-width) {
-    .header__logo {
-        width: 167px;
-        height: 88px;
-        border: none;
-        padding: 22px 0px 20px 0px;
-    }
-}
-// десктоп
-@media (min-width: @desktop-width) {
-    .header__logo {
-        width: 149px;
-        order: 2;
-        padding: 9px 0px 7px 0px;
-    }
-}
-
-// мобильная
 .header__logo-image {
     display: block;
     margin-left: auto;
@@ -80,25 +23,6 @@
     background: rgba(255,0,0,0.3);
     font-size: 0;
 }
-// планшет
-@media (min-width: @tablet-width) {
-    .header__logo-image {
-        margin: 0;
-        width: 113px;
-        height: 46px;
-        background: rgba(0,255,0,0.3);
-    }
-}
-// десктоп
-@media (min-width: @desktop-width) {
-    .header__logo-image {
-        width: 149px;
-        height: 72px;
-        background: rgba(0,0,255,0.3);
-    }
-}
-
-// мобильная
 .header__sandwich-icon {
     display: block;
     width: 20px;
@@ -143,18 +67,6 @@
         }
     }
 }
-// планшет
-// убираем иконку сэндвича на планшетной и десктопной версии
-@media (min-width: @tablet-width) {
-    .header__sandwich-icon { 
-        display: none;
-    }
-}
-
-////////////////////
-// ЭЛЕМЕНТ main-list
-
-// мобильная
 .header__main-list {
     margin: 0;
     padding: 0;
@@ -165,26 +77,6 @@
         display: none;
     }
 }
-// планшет
-@media (min-width: @tablet-width) {
-    .header__main-list {
-        width: 420px;
-        order: 2;
-        flex-direction: row;
-        flex-wrap: wrap;
-        &--hidden {
-            display: flex;
-        }
-    }
-}
-// десктоп
-@media (min-width: @desktop-width) {
-    .header__main-list {
-        order: 1;
-    }
-}
-
-// мобильная
 .header__main-item {
     height: 79px;
     box-sizing: border-box;
@@ -193,22 +85,6 @@
     align-items: center;
     justify-content: center;
 }
-// планшет
-@media (min-width: @tablet-width) {
-    .header__main-item {
-        margin-right: 37px;
-        height: 60px;
-        border-bottom: none;
-    }
-}
-// десктоп
-@media (min-width: @desktop-width) {
-    .header__main-item {
-        height: 88px;
-    }
-}
-
-// мобильная
 .header__main-link {
     position: relative;
     min-width: 260px;
@@ -221,26 +97,6 @@
     text-decoration: none;
     font-weight: 800;
 }
-// планшет
-@media (min-width: @tablet-width) {
-    .header__main-link {
-        padding-left: 0px;
-        min-width: 131px;
-        font-size: 15px;
-        line-height: 24px;
-    }
-}
-// десктоп
-@media (min-width: @desktop-width) {
-    .header__main-link {
-       font-size: 17px;
-    }
-}
-
-////////////////////
-// ЭЛЕМЕНТ user-list
-
-// мобильная
 .header__user-list {
     margin: 0;
     padding: 0;
@@ -251,27 +107,6 @@
         display: none;
     }
 }
-// планшет
-@media (min-width: @tablet-width) {
-    .header__user-list {
-        order: 1;
-        flex-direction: row;
-        &--hidden {
-            display: flex;
-        }
-    }
-}
-// десктоп
-@media (min-width: @desktop-width) {
-    .header__user-list {
-        width: 420px;
-        order: 3;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-    }
-}
-
-// мобильная
 .header__user-item {
     position: relative;
     height: 79px;
@@ -303,8 +138,89 @@
         }
     }
 }
+.header__user-link {
+    position: relative;
+    min-width: 260px;
+    padding-left: 45px;
+    box-sizing: border-box;
+    display: block;
+    color: #000000;
+    font-size: 17px;
+    line-height: 24px;
+    text-decoration: none;
+    font-weight: 800;
+}
+.header__ad-list {
+    display: none;
+}
+.header__delivery {
+    display: none;
+}
+
 // планшет
 @media (min-width: @tablet-width) {
+    .header {
+        background-color: #ffffff;
+        background-image: linear-gradient(
+            to bottom,
+            #ffffff,
+            #ffffff 88px,
+            #e7e7e7 88px,
+            #e7e7e7 89px,
+            #f9f9f9 89px
+        )
+    }
+    .header__nav {
+        flex-direction: row;
+        width: 668px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .header__logo {
+        width: 167px;
+        height: 88px;
+        border: none;
+        padding: 22px 0px 20px 0px;
+    }
+    .header__logo-image {
+        margin: 0;
+        width: 113px;
+        height: 46px;
+        background: rgba(0,255,0,0.3);
+    }
+    // убираем иконку сэндвича на планшетной и десктопной версии
+    .header__sandwich-icon { 
+        display: none;
+    }
+    .header__main-list {
+        width: 430px;
+        order: 2;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &--hidden {
+            display: flex;
+        }
+    }
+    .header__main-item {
+        margin-right: 37px;
+        height: 60px;
+        border-bottom: none;
+    }
+    .header__main-link {
+        padding-left: 0px;
+        min-width: 131px;
+        font-size: 15px;
+        line-height: 24px;
+    }
+    .header__user-list {
+        order: 1;
+        flex-direction: row;
+        &--hidden {
+            display: flex;
+        }
+    }
     .header__user-item {
         border-bottom: none;
         border-left: 1px solid #ececec;
@@ -322,38 +238,80 @@
             }
         }
     }
-}
-
-// мобильная
-.header__user-link {
-    position: relative;
-    min-width: 260px;
-    padding-left: 45px;
-    box-sizing: border-box;
-    display: block;
-    color: #000000;
-    font-size: 17px;
-    line-height: 24px;
-    text-decoration: none;
-    font-weight: 800;
-}
-// планшет
-@media (min-width: @tablet-width) {
     .header__user-link {
         padding-left: 33px;
         min-width: 81px;
     }
+    .header__delivery {
+        order: 3;
+        display: block;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .header__delivery-text {
+        color: #444444;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+    }
 }
 
-//////////////////
-// ЭЛЕМЕНТ ad-list
-
-// мобильная
-.header__ad-list {
-    display: none;
-}
-// десктоп
-@media (min-width: @desktop-width) {
+//десктоп
+@media (min-width: @desktop-width) { 
+    .header__nav {
+        width: 1050px;
+    }
+    .header__logo {
+        width: 149px;
+        order: 2;
+        padding: 9px 0px 7px 0px;
+    }
+    .header__logo-image {
+        width: 149px;
+        height: 72px;
+        background: rgba(0,0,255,0.3);
+    }
+    .header__main-list {
+        width: 450px;
+        order: 1;
+    }
+    .header__main-item {
+        padding-right: 35px;
+        height: 88px;
+        border-right: 1px solid #ececec;
+        &:nth-child(2n) {
+            border: none;
+        }
+    }
+    .header__main-link {
+       font-size: 17px;
+    }
+    .header__user-list {
+        width: 450px;
+        order: 3;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+    .header__user-item {
+        &--search .header__user-link {
+            font-size: 0px;
+            &::before {
+                left: 31px;
+            }
+        }
+        &--basket .header__user-link {
+            padding-left: 84px;
+            &::before {
+                left: 30px;
+            }
+        }
+    }
+    .header__user-link {
+        padding-left: 33px;
+        min-width: 82px;
+    }
     .header__ad-list {
         margin: 0;
         padding: 0;
@@ -374,34 +332,6 @@
         text-decoration: none;
         font-weight: 800;
     }
-}
-
-///////////////////
-// ЭЛЕМЕНТ delivery
-
-// мобильная
-.header__delivery {
-    display: none;
-}
-// планшет
-@media (min-width: @tablet-width) {
-    .header__delivery {
-        order: 3;
-        display: block;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-    .header__delivery-text {
-        color: #444444;
-        font-weight: 400;
-        font-size: 15px;
-        line-height: 24px;
-    }
-}
-// десктоп
-@media (min-width: @desktop-width) {
     .header__delivery {
         order: 5;
     }
