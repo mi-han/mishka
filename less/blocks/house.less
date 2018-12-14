@@ -1,38 +1,42 @@
 // мобильная
 .house {
+    display: flex;
+    flex-direction: column;
+    min-height: 478px;
     padding: 0;
     background-color: #f9f9f9;
     background-image: url(../../img/home-background.jpg);
     background-repeat: no-repeat;
     background-position: center -18px;
-    min-height: 478px;
     background-size: 575px;
-    display: flex;
-    flex-direction: column;
 }
 .house__header {
     width: 260px;
-    margin: 70px auto 0px auto;
-    padding: 0 25px;
-    text-align: center;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    padding-left: 25px;
+    padding-right: 25px;
     font-size: 27px;
     line-height: 30px;
+    text-align: center;
 }
 .house__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     // margin: auto 0px 0px 0px; в идеале, но не работает в IE11
     margin: 0;
     margin-top: 123px;
     padding: 0;
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
 }
 .house__item {
-    height: 103px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 103px;
     &--interior {
         background-color: #63d1bb;
     }
@@ -63,15 +67,15 @@
     }
 }
 .house__link {
-    padding: 0px 130px 0px 0px;
-    box-sizing: border-box;
+    position: relative;
     width: 260px;
-    color: #ffffff;
+    padding-right: 130px;
+    font-weight: 700;
     font-size: 19px;
     line-height: 24px;
     text-decoration: none;
-    font-weight: 800;
-    position: relative;
+    color: #ffffff;
+    box-sizing: border-box;
 }
 
 // планшет
@@ -82,8 +86,8 @@
         background-position: center -60px;
     }
     .house__header {
-        margin-top: 93px;
         width: 668px;
+        margin-top: 93px;
         font-size: 43px;
         line-height: 50px;
     }
@@ -91,11 +95,13 @@
         white-space: normal;
     }
     .house__list {
-        width: 668px;
-        // margin: auto auto 0px auto; в идеале, но не работает в IE11
-        margin: 374px auto 0 auto;
         flex-direction: row;
-
+        width: 668px;
+        // margin-top: auto; в идеале, но не работает в IE11
+        margin-top: 374px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
     }
     .house__item {
         height: 118px;
@@ -117,8 +123,9 @@
         }
     }
     .house__link {
-        padding: 0px 167px 0px 36px; 
         width: 334px;
+        padding-left: 36px;
+        padding-right: 167px;
         font-size: 20px;
         line-height: 30px;
     }
@@ -131,12 +138,16 @@
         line-height: 57px;
     }
     .house__list { 
-        margin: 361px auto 0 auto;
         width: 1050px;
+        margin-top: 361px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
     }
     .house__link {
-        padding: 0px 350px 0px 36px; 
         width: 525px;
+        padding-left: 36px;
+        padding-right: 350px;
         font-size: 20px;
         line-height: 30px;
     }

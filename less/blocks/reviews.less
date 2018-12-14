@@ -1,8 +1,10 @@
 // мобильная
 .reviews {
     width: 260px;
-    margin: 0 auto 36px auto;
-    padding: 30px 0 0 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 36px;
+    padding-top: 30px;
 }
 .reviews__header {
     margin: 0;
@@ -12,27 +14,27 @@
     line-height: 30px;
 }
 .reviews__item {
-    margin: 24px 0 0 0;
+    margin-top: 24px;
     padding: 0;
     font-size: 15px;
     line-height: 30px;
     color: #444444;
 }
 .reviews__item-author {
-    margin: 27px 0 0 0;
     display: block;
+    margin-top: 27px;
+    font-weight: 700;
     font-style: normal;
     font-size: 17px;
     line-height: 24px;
-    font-weight: 800;
     color: #000000;
 }
 .reviews__author-link {
     display: inline-block;
-    margin: 5px 0 0 0;
+    margin-top: 5px;
     font-weight: 400;
-    color: #444444;
     text-decoration: none;
+    color: #444444;
     // border-bottom: 1px solid #62d1ba; в GL не определено
     &:hover,
     &:focus {
@@ -45,32 +47,32 @@
     }
 }
 .reviews__nav {
-    margin: 33px 0 0 0;
-    padding: 0;
     display: flex;
+    margin-top: 33px;
+    padding: 0;
 }
 .reviews__nav-prev,
 .reviews__nav-next {
+    position: relative;
     display: inline-block;
-    height: 51px;
     width: 50%;
+    height: 51px;
+    font-size: 0px;
+    background: none;
     border: 1px solid #ececec;
     box-sizing: border-box;
-    font-size: 0px;
-    position: relative;
-    background: none;
 }
 .reviews__nav-prev {
     border-right: none;
 }
 .reviews__arrow-icon {
-    width: 50px;
-    height: 4px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 4px;
     background: #000000;
+    transform: translate(-50%, -50%);
 }
 .reviews__nav-prev > .reviews__arrow-icon {
     &::before {
@@ -78,16 +80,16 @@
         position: absolute;
         width: 18px;
         height: 4px;
-        transform: translate(-29px, -5px) rotate(-45deg);
         background: #000000;
+        transform: translate(-29px, -5px) rotate(-45deg);
     }
     &::after {
         content: "";
         position: absolute;
         width: 18px;
         height: 4px;
-        transform: translate(-29px, 5px) rotate(45deg);
         background: #000000;
+        transform: translate(-29px, 5px) rotate(45deg);
     }
 }
 .reviews__nav-next > .reviews__arrow-icon {
@@ -96,16 +98,16 @@
         position: absolute;
         width: 18px;
         height: 4px;
-        transform: translate(11px, -5px) rotate(45deg);
         background: #000000;
+        transform: translate(11px, -5px) rotate(45deg);
     }
     &::after {
         content: "";
         position: absolute;
         width: 18px;
         height: 4px;
-        transform: translate(11px, 5px) rotate(-45deg);
         background: #000000;
+        transform: translate(11px, 5px) rotate(-45deg);
     }
 }
 .reviews__nav-prev:hover > .reviews__arrow-icon,
@@ -119,7 +121,7 @@
     opacity: 0.3;
 }
 .reviews__send-button {
-    margin: 39px 0 0 0;
+    margin-top: 39px;
 }
 .reviews__send-button > button {
     font-size: 18px;
@@ -128,53 +130,55 @@
 // планшет
 @media (min-width: @tablet-width) {
     .reviews {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap;
         width: 768px;
         min-height: 457px;
         margin-top: 30px;
-        padding: 76px 50px 0 50px;
-        box-sizing: border-box;
-        position: relative;
-        display: flex;
-        align-items: flex-start;
-        align-content: flex-start;
-        flex-direction: row;
-        flex-wrap: wrap;
+        padding-top: 76px;
+        padding-left: 50px;
+        padding-right: 50px;
         background-image: linear-gradient(
             to right,
             rgba(255,255,0,0.3),
             rgba(255,255,0,0.3) 350px,
             #ffffff 350px
         );
+        box-sizing: border-box;
     }
     .reviews__header {
+        width: 100%;
         margin-left: -5px;
         font-size: 43px;
         line-height: 50px;
-        width: 100%;
     }
     .reviews__item {
         width: 100%;
-        margin: 50px 0 0 0;
+        margin-top: 50px;
         padding: 0;
         font-size: 17px;
         line-height: 30px;
     }
     .reviews__item-author {
         padding-top: 30px;
-        box-sizing: border-box;
         padding-right: 370px;
         font-size: 18px;
         line-height: 24px;
+        box-sizing: border-box;
     }
     .reviews__author-link {
-        margin: 4px 0 0 0;
+        margin-top: 4px;
         font-size: 17px;
         line-height: 30px;
     }
     .reviews__nav {
         position: absolute;
-        bottom: 50px;
         right: 58px;
+        bottom: 50px;
         width: 160px;
     }
     .reviews__nav-prev, 
@@ -197,7 +201,9 @@
     .reviews {
         width: 1050px;
         margin-top: 36px;
-        padding: 70px 50px 0 175px;
+        padding-top: 70px;
+        padding-left: 175px;
+        padding-right: 50px;
     }
     .reviews__header {
         font-size: 53px;
