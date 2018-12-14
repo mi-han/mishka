@@ -1,0 +1,141 @@
+.about-us {
+    width: 260px;
+    margin: 0 auto 36px auto;
+    padding: 34px 0;
+}
+.about-us__header {
+    margin: 0px;
+    font-size: 25px;
+    line-height: 30px;
+    margin-left: -2px; // фикс отступа для шрифта [PP]
+}
+.about-us__list {
+    margin: 0;
+    margin-top: 28px;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: bold;
+}
+.about-us__item {
+    position: relative;
+    padding-top: 58px;
+    min-height: 100px;
+    box-sizing: border-box;
+    margin-bottom: 23px;
+    &::before {
+        content: "";
+        position: absolute;
+    }
+    &--flower {
+        &::before {
+            top: 3px;
+            left: 8px;
+            width: 32px;
+            height: 37px;
+            background: rgba(255,0,255,0.3);
+        }
+    }
+    &--banknote {
+        &::before {
+            top: 5px;
+            left: 0px;
+            width: 47px;
+            height: 27px;
+            background: rgba(255,0,255,0.3);
+        }
+    }
+    &--heart {
+        &::before {
+            top: 10px;
+            left: 7px;
+            width: 34px;
+            height: 27px;
+            background: rgba(255,0,255,0.3);
+        }
+    }
+    &--ball {
+        &::before {
+            top: 7px;
+            left: 3px;
+            width: 35px;
+            height: 34px;
+            background: rgba(255,0,255,0.3);
+        }
+    }
+    &--rocket {
+        &::before {
+            top: 8px;
+            left: -6px;
+            width: 55px;
+            height: 23px;
+            background: rgba(255,0,255,0.3);
+        }
+    }
+    &--gift {
+        &::before {
+            top: 6px;
+            left: 3px;
+            width: 33px;
+            height: 32px;
+            background: rgba(255,0,255,0.3);
+        }
+    }
+}
+
+// планшет
+@media (min-width: @tablet-width) {
+    .about-us {
+        width: 668px;
+    }
+    .about-us__header {
+        margin-top: 32px;
+        margin-left: -4px; // [PP]
+        font-size: 43px;
+        line-height: 50px;
+    }
+    .about-us__list {
+        margin-top: 45px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 20px;
+        line-height: 22px;
+    }
+    .about-us__item {
+        width: 50%;
+        margin-bottom: 53px;
+        &--flower {
+            order: 1;
+        }
+        &--banknote {
+            order: 3;
+        }
+        &--heart {
+            order: 5;
+        }
+        &--ball {
+            order: 2;
+        }
+        &--rocket {
+            order: 4;
+        }
+        &--gift {
+            order: 6;
+        }
+    }
+}
+
+// десктоп
+@media (min-width: @desktop-width) {
+    .about-us {
+        width: 700px;
+    }
+    .about-us__header {
+        margin-top: 69px;
+        font-size: 53px;
+        line-height: 57px;
+    }
+}
