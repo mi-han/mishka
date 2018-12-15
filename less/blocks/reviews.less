@@ -80,36 +80,44 @@
     &::before {
         content: "";
         position: absolute;
+        top: -5px;
+        left: -5px;
         width: 18px;
         height: 4px;
         background: #000000;
-        transform: translate(-29px, -5px) rotate(-45deg);
+        transform: rotate(-45deg);
     }
     &::after {
         content: "";
         position: absolute;
+        top: 5px;
+        left: -5px;
         width: 18px;
         height: 4px;
         background: #000000;
-        transform: translate(-29px, 5px) rotate(45deg);
+        transform: rotate(45deg);
     }
 }
 .reviews__nav-next > .reviews__arrow-icon {
     &::before {
         content: "";
         position: absolute;
+        top: -5px;
+        right: -5px;
         width: 18px;
         height: 4px;
         background: #000000;
-        transform: translate(11px, -5px) rotate(45deg);
+        transform: rotate(45deg);
     }
     &::after {
         content: "";
         position: absolute;
+        top: 5px;
+        right: -5px;
         width: 18px;
         height: 4px;
         background: #000000;
-        transform: translate(11px, 5px) rotate(-45deg);
+        transform: rotate(-45deg);
     }
 }
 .reviews__nav-prev:hover > .reviews__arrow-icon,
