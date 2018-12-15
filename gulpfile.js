@@ -6,23 +6,38 @@ var filesize = require('gulp-filesize');
 var autoprefixer = require('autoprefixer');
 var server = require('browser-sync').create();
 var cwebp = require('gulp-cwebp');
+var svgSprite = require('gulp-svg-sprite');
 
 gulp.task('less', function () {
-  return gulp.src('less/style.less')
-    .pipe(plumber())
-    .pipe(less())
-    .pipe(postcss([
-        autoprefixer()
-    ]))
-    .pipe(gulp.dest('css'))
-    .pipe(filesize());
+    return gulp.src('less/style.less')
+        .pipe(plumber())
+        .pipe(less())
+        .pipe(postcss([
+            autoprefixer()
+        ]))
+        .pipe(gulp.dest('css'))
+        .pipe(filesize());
 });
 
 gulp.task('cwebp', function () {
     gulp.src('./img/*.jpg')
-      .pipe(cwebp())
-      .pipe(gulp.dest('./img/'));
-  });
+        .pipe(cwebp())
+        .pipe(gulp.dest('./img/'));
+});
+
+gulp.task('sprite', function () {
+    gulp.src('img/svg-source/*.svg')
+        .pipe(svgSprite({
+            mode: {
+                css: { // Activate the «css» mode
+                    render: {
+                    css: true // Activate CSS output (with default options)
+                    }
+                }
+            }
+        }))
+        .pipe(gulp.dest('./img/'));
+});
 
 gulp.task('serve', ['less'], function(){
     server.init({
