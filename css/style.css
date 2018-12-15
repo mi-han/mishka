@@ -1212,6 +1212,9 @@ font-family: 'PT Sans', Arial, sans-serif;
 .footer {
   background: #f1f1f1;
 }
+.footer__logo {
+  display: none;
+}
 .footer__wrapper {
   display: flex;
   flex-direction: column;
@@ -1268,6 +1271,33 @@ font-family: 'PT Sans', Arial, sans-serif;
   margin-left: 30px;
   font-size: 0px;
   background: rgba(255, 0, 255, 0.3);
+}
+@media (min-width: 768px) {
+  .footer__wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 668px;
+    min-height: 143px;
+  }
+  .footer__logo {
+    display: block;
+    width: 182px;
+  }
+  .footer__logo-image {
+    width: 102px;
+    height: 34px;
+    background: rgba(255, 0, 0, 0.3);
+  }
+  .footer__copyright {
+    width: 182px;
+    border-top: none;
+  }
+}
+@media (min-width: 1200px) {
+  .footer__wrapper {
+    width: 1050px;
+  }
 }
 .button {
   display: inline-block;

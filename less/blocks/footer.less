@@ -1,6 +1,9 @@
 .footer {
     background: #f1f1f1;
 }
+.footer__logo {
+    display: none;
+}
 .footer__wrapper {
     display: flex;
     flex-direction: column;
@@ -57,4 +60,35 @@
     margin-left: 30px;
     font-size: 0px;
     background: rgba(255, 0, 255, 0.3);
+}
+
+// планшет
+@media (min-width: @tablet-width) {
+    .footer__wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 668px;
+        min-height: 143px;
+    }
+    .footer__logo {
+        display: block;
+        width: 182px;
+    }
+    .footer__logo-image {
+        width: 102px;
+        height: 34px;
+        background: rgba(255, 0, 0, 0.3);
+    }
+    .footer__copyright { 
+        width: 182px;
+        border-top: none;
+    }
+}
+
+// десктоп
+@media (min-width: @desktop-width) {
+    .footer__wrapper {
+        width: 1050px;
+    }
 }
