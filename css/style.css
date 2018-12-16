@@ -61,8 +61,6 @@ font-family: 'PT Sans', Arial, sans-serif;
   height: 35px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 0;
-  background: rgba(255, 0, 0, 0.3);
 }
 .header__sandwich-icon {
   position: absolute;
@@ -232,7 +230,6 @@ font-family: 'PT Sans', Arial, sans-serif;
     margin: 0;
     width: 113px;
     height: 46px;
-    background: rgba(0, 255, 0, 0.3);
   }
   .header__sandwich-icon {
     display: none;
@@ -312,7 +309,6 @@ font-family: 'PT Sans', Arial, sans-serif;
   .header__logo-image {
     width: 149px;
     height: 72px;
-    background: rgba(0, 0, 255, 0.3);
   }
   .header__main-list {
     order: 1;
@@ -400,17 +396,22 @@ font-family: 'PT Sans', Arial, sans-serif;
 .house {
   display: flex;
   flex-direction: column;
-  min-height: 478px;
+  height: 489px;
   padding: 0;
   background-color: #f9f9f9;
-  background-image: url(../../img/home-background.jpg);
+  background-image: url(../../img/house__background-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center -18px;
-  background-size: 575px;
+  background-size: 320px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .house {
+    background-image: url(../../img/house__background-mobile@2x.jpg);
+  }
 }
 .house__header {
   width: 260px;
-  margin-top: 70px;
+  margin-top: 71px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
@@ -425,7 +426,7 @@ font-family: 'PT Sans', Arial, sans-serif;
   flex-direction: column;
   flex-wrap: wrap;
   margin: 0;
-  margin-top: 123px;
+  margin-top: auto;
   padding: 0;
   list-style-type: none;
 }
@@ -448,7 +449,8 @@ font-family: 'PT Sans', Arial, sans-serif;
   right: 6px;
   width: 40px;
   height: 62px;
-  background: rgba(255, 0, 255, 0.3);
+  background: url(../../img/house__icon-interior.svg);
+  opacity: 0.5;
 }
 .house__item--toys .house__link::before {
   content: "";
@@ -457,7 +459,8 @@ font-family: 'PT Sans', Arial, sans-serif;
   right: -4px;
   width: 60px;
   height: 60px;
-  background: rgba(0, 255, 0, 0.3);
+  background: url(../../img/house__icon-toys.svg);
+  opacity: 0.5;
 }
 .house__link {
   position: relative;
@@ -473,6 +476,7 @@ font-family: 'PT Sans', Arial, sans-serif;
 @media (min-width: 768px) {
   .house {
     min-height: 685px;
+    background-image: url(../../img/house__background-desktop-tablet.jpg);
     background-size: 1150px;
     background-position: center -60px;
   }
@@ -514,6 +518,11 @@ font-family: 'PT Sans', Arial, sans-serif;
     padding-right: 167px;
     font-size: 20px;
     line-height: 30px;
+  }
+}
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi), (min-width: 768px) and (min-resolution: 1.5dppx) {
+  .house {
+    background-image: url(../../img/house__background-desktop-tablet@2x.jpg);
   }
 }
 @media (min-width: 1200px) {

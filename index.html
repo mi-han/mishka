@@ -11,7 +11,11 @@
 <header class="header">
     <nav class="header__nav">
         <div class="header__logo">
-            <a class="header__logo-image" href="#">Mishka</a>
+            <picture>
+                <source media="(min-width: 1200px)" srcset="img/header__logo-desktop.svg">
+                <source media="(min-width: 768px)" srcset="img/header__logo-tablet.svg">
+                <img class="header__logo-image" src="img/header__logo-mobile.svg" width="149" height="72" alt="Мишка">
+            </picture>
             <a class="header__sandwich-icon">Показать навигацию</a>
         </div>
         <ul class="header__main-list header__main-list--hidden">
