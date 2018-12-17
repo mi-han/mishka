@@ -3,6 +3,8 @@ var run = require('run-sequence');
 var del = require('del'); 
 var rename = require('gulp-rename');
 var server = require('browser-sync').create();
+var posthtml = require('gulp-posthtml');
+var include = require('posthtml-include');
 var plumber = require('gulp-plumber');
 var less = require('gulp-less');
 var minify = require('gulp-csso');
@@ -13,8 +15,16 @@ var tinypng = require('gulp-tinypng-compress');
 var cwebp = require('gulp-cwebp');
 var svgStore = require('gulp-svgstore');
 
+gulp.task('html', function(){
+    gulp.src('./source/*.html')
+    .pipe(posthtml([
+        include()
+    ]))
+    .pipe(gulp.dest('./'))
+});
+
 gulp.task('less', function () {
-    gulp.src('./less/style.less')
+    gulp.src('./source/less/style.less')
         .pipe(plumber())
         .pipe(less())
         .pipe(postcss([
@@ -28,7 +38,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('tinypng', function () {
-    gulp.src('./source/*.{png,jpg,jpeg}')
+    gulp.src('./source/img/*.{png,jpg,jpeg}')
         .pipe(tinypng({
             key: 'wNS29BVwd8BM7rkKHQxBKtnLgZHxbM81',
             sigFile: './source/.tinypng-sigs',
@@ -39,7 +49,7 @@ gulp.task('tinypng', function () {
 });
 
 gulp.task('imagemin', function() {
-    gulp.src('./source/*.{png,jpg,jpeg,svg}')
+    gulp.src('./source/img/*.{png,jpg,jpeg,svg}')
         .pipe(imagemin([
             imagemin.optipng({optimizationLevel: 3}),
             imagemin.jpegtran({progressive: true}),
@@ -50,7 +60,7 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task('svgo', function () {
-    gulp.src('./source/*.svg')
+    gulp.src('./source/img/*.svg')
         .pipe(imagemin([
             imagemin.svgo()
         ]))
@@ -59,14 +69,14 @@ gulp.task('svgo', function () {
 });
 
 gulp.task('webp', function () {
-    gulp.src('./source/*.{png,jpg,jpeg}')
+    gulp.src('./source/img/*.{png,jpg,jpeg}')
         .pipe(cwebp())
         .pipe(gulp.dest('./img/'))
         .pipe(server.stream());
 });
 
 gulp.task('sprite', function () {
-    gulp.src('./source/sprite/sprite--*.svg')
+    gulp.src('./source/img/sprite/sprite--*.svg')
         .pipe(imagemin([
             imagemin.svgo()
         ]))
@@ -77,6 +87,21 @@ gulp.task('sprite', function () {
         .pipe(gulp.dest('./img/'))
         .pipe(server.stream());
 });
+
+gulp.task('serve', ['less'], function(){
+    server.init({
+        server: '.',
+        notify: false,
+        open: true,
+        cors: true,
+        ui: false
+    });
+
+    gulp.watch('./source/less/**/*.less', ['less']);
+    gulp.watch('./source/*.html').on('change', server.reload);
+});
+
+gulp.task('default', ['serve']);
 
 gulp.task('optimize', function (done) {
     run('less', 'tinypng', 'imagemin', 'svgo', 'webp', 'sprite', done);
@@ -102,17 +127,3 @@ gulp.task('build', function (done) {
     run('clean', 'copy', done);
 });
 
-gulp.task('serve', ['less'], function(){
-    server.init({
-        server: '.',
-        notify: false,
-        open: true,
-        cors: true,
-        ui: false
-    });
-
-    gulp.watch('./less/**/*.less', ['less']);
-    gulp.watch('*.html').on('change', server.reload);
-});
-
-gulp.task('default', ['serve']);
