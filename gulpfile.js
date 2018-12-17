@@ -5,6 +5,7 @@ var rename = require('gulp-rename');
 var server = require('browser-sync').create();
 var posthtml = require('gulp-posthtml');
 var include = require('posthtml-include');
+var htmlmin = require('gulp-htmlmin');
 var plumber = require('gulp-plumber');
 var less = require('gulp-less');
 var minify = require('gulp-csso');
@@ -20,6 +21,7 @@ gulp.task('html', function(){
     .pipe(posthtml([
         include()
     ]))
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('./'))
 });
 
@@ -88,7 +90,7 @@ gulp.task('sprite', function () {
         .pipe(server.stream());
 });
 
-gulp.task('serve', ['less'], function(){
+gulp.task('serve', ['html', 'less'], function(){
     server.init({
         server: '.',
         notify: false,
@@ -98,7 +100,7 @@ gulp.task('serve', ['less'], function(){
     });
 
     gulp.watch('./source/less/**/*.less', ['less']);
-    gulp.watch('./source/*.html').on('change', server.reload);
+    gulp.watch('./source/*.html', ['html']).on('change', server.reload);
 });
 
 gulp.task('default', ['serve']);
