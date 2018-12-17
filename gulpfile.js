@@ -2,74 +2,106 @@ var gulp = require('gulp');
 var less = require('gulp-less');
 var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
+var minify = require('gulp-csso');
 var filesize = require('gulp-filesize');
 var autoprefixer = require('autoprefixer');
 var server = require('browser-sync').create();
+var imagemin = require('gulp-imagemin');
 var tinypng = require('gulp-tinypng-compress');
 var cwebp = require('gulp-cwebp');
-var svgSprite = require('gulp-svg-sprite');
-var svgmin = require('gulp-svgmin');
-var cheerio = require('gulp-cheerio');
+var svgStore = require('gulp-svgstore');
+var rename = require('gulp-rename');
+var run = require('run-sequence');
+var del = require('del'); 
 
 gulp.task('less', function () {
-    return gulp.src('less/style.less')
+    gulp.src('./less/style.less')
         .pipe(plumber())
         .pipe(less())
         .pipe(postcss([
             autoprefixer()
         ]))
         .pipe(gulp.dest('css'))
+        .pipe(minify())
+        .pipe(rename('style.min.css'))
+        .pipe(gulp.dest('css'))
         .pipe(filesize())
         .pipe(server.stream());
 });
 
 gulp.task('tinypng', function () {
-    gulp.src('img/source/*.{png,jpg,jpeg}')
-        .pipe(plumber())
+    gulp.src('./source/*.{png,jpg,jpeg}')
         .pipe(tinypng({
             key: 'wNS29BVwd8BM7rkKHQxBKtnLgZHxbM81',
-            sigFile: './.tinypng-sigs',
+            sigFile: './source/.tinypng-sigs',
             log: true
         }))
         .pipe(gulp.dest('./img/'))
-        .pipe(server.stream());;
+        .pipe(server.stream());
 });
 
-gulp.task('cwebp', function () {
-    gulp.src('img/source/*.{png,jpg,jpeg}')
-        .pipe(plumber())
+gulp.task('imagemin', function() {
+    gulp.src('./source/*.{png,jpg,jpeg,svg}')
+        .pipe(imagemin([
+            imagemin.optipng({optimizationLevel: 3}),
+            imagemin.jpegtran({progressive: true}),
+            imagemin.svgo()
+        ]))
+        .pipe(gulp.dest('./img/'))
+        .pipe(server.stream());
+});
+
+gulp.task('svgo', function () {
+    gulp.src('./source/*.svg')
+        .pipe(imagemin([
+            imagemin.svgo()
+        ]))
+        .pipe(gulp.dest('./img/'))
+        .pipe(server.stream());
+});
+
+gulp.task('webp', function () {
+    gulp.src('./source/*.{png,jpg,jpeg}')
         .pipe(cwebp())
         .pipe(gulp.dest('./img/'))
         .pipe(server.stream());
 });
 
 gulp.task('sprite', function () {
-    gulp.src('img/source/sprite/*.svg')
-		.pipe(svgmin({
-			js2svg: {
-				pretty: true
-			}
-		}))
-		.pipe(cheerio({
-			run: function ($) {
-				$('[fill]').removeAttr('fill');
-				$('[stroke]').removeAttr('stroke');
-				$('[style]').removeAttr('style');
-			},
-			parserOptions: {xmlMode: true}
-		}))
-        .pipe(svgSprite({
-            mode: {
-                css: {
-                    render: {
-                        css: {
-                            dest: 'sprite.css'
-                        }
-                    }
-                }
-            }
+    gulp.src('./source/sprite/sprite--*.svg')
+        .pipe(imagemin([
+            imagemin.svgo()
+        ]))
+        .pipe(svgStore({
+            inlineSvg: true
         }))
-        .pipe(gulp.dest('./img/'));
+        .pipe(rename('sprite.svg'))
+        .pipe(gulp.dest('./img/'))
+        .pipe(server.stream());
+});
+
+gulp.task('optimize', function (done) {
+    run('less', 'tinypng', 'imagemin', 'svgo', 'webp', 'sprite', done);
+});
+
+gulp.task('clean', function () {
+    del('build');
+});
+
+gulp.task('copy', function () {
+    gulp.src([
+        './fonts/*',
+        './img/*',
+        './css/*',
+        './*.html'
+    ], {
+        base: './'
+    })
+    .pipe(gulp.dest('build'));
+});
+
+gulp.task('build', function (done) {
+    run('clean', 'copy', done);
 });
 
 gulp.task('serve', ['less'], function(){
@@ -81,7 +113,7 @@ gulp.task('serve', ['less'], function(){
         ui: false
     });
 
-    gulp.watch('less/**/*.less', ['less']);
+    gulp.watch('./less/**/*.less', ['less']);
     gulp.watch('*.html').on('change', server.reload);
 });
 
