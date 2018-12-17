@@ -15,6 +15,15 @@
     border-bottom: 1px solid #ececec;
     box-sizing: border-box;
 }
+.header__logo-link {
+    &:hover .header__logo-image,
+    &:focus .header__logo-image {
+        opacity: 0.6;
+    }
+    &:active .header__logo-image {
+        opacity: 0.3;
+    }
+}
 .header__logo-image {
     display: block;
     width: 86px;

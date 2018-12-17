@@ -24,23 +24,15 @@
     padding: 0;
     list-style-type: none;
 }
-.footer__social-link {
-    display: block;
-    font-size: 0;
-    &--instagram {
-        width: 22px;
-        height: 21px;
-        background: rgba(255, 0, 0, 0.3);
+.footer__social-image {
+    fill: #221f1f;
+    &:hover,
+    &:focus {
+        fill: #46c1ae;
     }
-    &--facebook {
-        width: 15px;
-        height: 28px;
-        background: rgba(0, 255, 0, 0.3);
-    }
-    &--twitter {
-        width: 23px;
-        height: 20px;
-        background: rgba(0, 0, 255, 0.3);
+    &:active {
+        fill: #46c1ae;
+        opacity: 0.3;
     }
 }
 .footer__copyright {
@@ -55,11 +47,25 @@
     box-sizing: border-box;
 }
 .footer__copyright-link {
+    text-decoration: none;
+    color: #000000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &:active {
+        opacity: 0.3;
+    }
+    &:hover .footer__copyright-image,
+    &:focus .footer__copyright-image {
+        fill: #46c1ae;
+    }
+}
+.footer__copyright-image {
+    margin-top: 5px;
+    margin-left: 30px;
     width: 27px;
     height: 34px;
-    margin-left: 30px;
-    font-size: 0px;
-    background: rgba(255, 0, 255, 0.3);
+    fill: #63d1bb;
 }
 
 // планшет
@@ -76,9 +82,14 @@
         width: 182px;
     }
     .footer__logo-image {
-        width: 102px;
-        height: 34px;
-        background: rgba(255, 0, 0, 0.3);
+        fill: #231f20;
+        &:hover,
+        &:focus {
+            fill: #46c1ae;
+        }
+        &:active {
+            opacity: 0.3;
+        }
     }
     .footer__copyright { 
         width: 182px;

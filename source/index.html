@@ -9,15 +9,17 @@
     <link href="css/style.min.css" rel="stylesheet">
 </head>
 <body class="page__body">
-    
+
 <header class="header">
     <nav class="header__nav">
         <div class="header__logo">
-            <picture>
-                <source media="(min-width: 1200px)" srcset="img/header__logo-desktop.svg">
-                <source media="(min-width: 768px)" srcset="img/header__logo-tablet.svg">
-                <img class="header__logo-image" src="img/header__logo-mobile.svg" width="149" height="72" alt="Мишка">
-            </picture>
+            <a class="header__logo-link" href="#">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="img/header__logo-desktop.svg">
+                    <source media="(min-width: 768px)" srcset="img/header__logo-tablet.svg">
+                    <img class="header__logo-image" src="img/header__logo-mobile.svg" width="149" height="72" alt="Мишка">
+                </picture>
+            </a>
             <a class="header__sandwich-icon">Показать навигацию</a>
         </div>
         <ul class="header__main-list header__main-list--hidden">
@@ -89,7 +91,13 @@
                 <p class="goods-of-week__price">Цена: 990 руб.</p>
                 <button class="goods-of-week__button button" type="button">Заказать</button>
             </div>
-            <div class="goods-of-week__image"></div>
+            <div class="goods-of-week__image-block">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="img/goods-of-week__desktop.jpg 1x, img/goods-of-week__desktop@2x.jpg 2x, img/goods-of-week__desktop@3x.jpg 3x, img/goods-of-week__desktop@4x.jpg 4x">
+                    <source media="(min-width: 768px)" srcset="img/goods-of-week__tablet.jpg 1x, img/goods-of-week__tablet@2x.jpg 2x, img/goods-of-week__tablet@3x.jpg 3x, img/goods-of-week__tablet@4x.jpg 4x">
+                    <img class="goods-of-week__image" src="img/goods-of-week__mobile.jpg" srcset="img/goods-of-week__mobile@2x.jpg 2x, img/goods-of-week__mobile@3x.jpg 3x, img/goods-of-week__mobile@4x.jpg 4x" alt="Вязаные корзинки">
+                </picture>
+            </div>
         </section>
     </div>
     <div class="content__about-us">
@@ -152,21 +160,42 @@
 <footer class="footer">
     <div class="footer__wrapper">
         <div class="footer__logo">
-            <div class="footer__logo-image"></div>
+            <a class="footer__logo-link" href="#">
+                <svg class="footer__logo-image" width="102" height="34" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="img/sprite.svg#sprite--footer__logo-footer"></use>
+                </svg>
+            </a>
         </div>
         <ul class="footer__social">
             <li class="footer__social-block">
-                <a class="footer__social-link footer__social-link--instagram" href="#">Мы в Инстаграмме</a>
+                <a class="footer__social-link" href="#">
+                    <svg class="footer__social-image footer__social-image--instagram" width="22" height="21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="img/sprite.svg#sprite--footer__icon-instagram"></use>
+                    </svg>
+                </a>
             </li>
             <li class="footer__social-block">
-                <a class="footer__social-link footer__social-link--facebook" href="#">Мы в Фэйсбуке</a>
+                <a class="footer__social-link" href="#">
+                    <svg class="footer__social-image footer__social-image--facebook" width="15" height="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="img/sprite.svg#sprite--footer__icon-facebook"></use>
+                    </svg>
+                </a>
             </li>
             <li class="footer__social-block">
-                <a class="footer__social-link footer__social-link--twitter" href="#">Мы в Твиттере</a>
+                <a class="footer__social-link" href="#">
+                    <svg class="footer__social-image footer__social-image--twitter" width="23" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="img/sprite.svg#sprite--footer__icon-twitter"></use>
+                    </svg>
+                </a>
             </li>
         </ul>
         <div class="footer__copyright">
-            Разработано <a class="footer__copyright-link" href="#">HTML Academy</a>
+            <a class="footer__copyright-link" href="#">
+                Разработано 
+                <svg class="footer__copyright-image" width="27" height="34" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="img/sprite.svg#sprite--footer__html-academy-logo"></use>
+                </svg>
+            </a>
         </div>
     </div>
 </footer>

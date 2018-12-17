@@ -152,12 +152,13 @@
         padding-top: 76px;
         padding-left: 50px;
         padding-right: 50px;
-        background-image: linear-gradient(
-            to right,
-            rgba(255,255,0,0.3),
-            rgba(255,255,0,0.3) 350px,
-            #ffffff 350px
-        );
+        background-image: url('../img/reviews__background-desktop-tablet.jpg');
+        background-repeat: no-repeat;
+        background-size: 350px;
+        // Retina
+        @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+            background-image: url('../img/reviews__background-desktop-tablet@2x.jpg');
+        }
         box-sizing: border-box;
     }
     .reviews__header {
@@ -214,6 +215,7 @@
         padding-top: 70px;
         padding-left: 175px;
         padding-right: 50px;
+        background-position: 0px 2px;
     }
     .reviews__header {
         margin-top: 3px;

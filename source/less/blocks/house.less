@@ -46,6 +46,13 @@
     &--toys {
         background-color: #56c3b2;
     }
+    &:hover .house__link::before,
+    &:focus .house__link::before {
+        opacity: 1;
+    } 
+    &:active .house__link::before {
+        opacity: 0.3;
+    }
 }
 .house__item--interior .house__link {
     &::before {

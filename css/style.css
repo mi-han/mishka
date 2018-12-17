@@ -57,6 +57,13 @@ font-family: 'PT Sans', Arial, sans-serif;
   border-bottom: 1px solid #ececec;
   box-sizing: border-box;
 }
+.header__logo-link:hover .header__logo-image,
+.header__logo-link:focus .header__logo-image {
+  opacity: 0.6;
+}
+.header__logo-link:active .header__logo-image {
+  opacity: 0.3;
+}
 .header__logo-image {
   display: block;
   width: 86px;
@@ -444,6 +451,13 @@ font-family: 'PT Sans', Arial, sans-serif;
 .house__item--toys {
   background-color: #56c3b2;
 }
+.house__item:hover .house__link::before,
+.house__item:focus .house__link::before {
+  opacity: 1;
+}
+.house__item:active .house__link::before {
+  opacity: 0.3;
+}
 .house__item--interior .house__link::before {
   content: "";
   position: absolute;
@@ -610,13 +624,12 @@ font-family: 'PT Sans', Arial, sans-serif;
   color: #444444;
   box-sizing: border-box;
 }
-.goods-of-week__image {
+.goods-of-week__image-block {
   position: absolute;
   bottom: 124px;
-  z-index: 2;
+  z-index: -2;
   width: 260px;
   height: 315px;
-  background: rgba(255, 0, 255, 0.1);
 }
 @media (min-width: 768px) {
   .goods-of-week {
@@ -660,7 +673,7 @@ font-family: 'PT Sans', Arial, sans-serif;
   .goods-of-week__table-spec {
     margin-top: 35px;
   }
-  .goods-of-week__image {
+  .goods-of-week__image-block {
     position: relative;
     bottom: auto;
     width: 50%;
@@ -704,7 +717,7 @@ font-family: 'PT Sans', Arial, sans-serif;
   .goods-of-week__table-spec {
     margin-top: 49px;
   }
-  .goods-of-week__image {
+  .goods-of-week__image-block {
     height: 636px;
     margin-top: 70px;
   }
@@ -742,48 +755,49 @@ font-family: 'PT Sans', Arial, sans-serif;
 .about-us__item::before {
   content: "";
   position: absolute;
+  background-repeat: no-repeat;
 }
 .about-us__item--flower::before {
   top: 3px;
   left: 8px;
   width: 32px;
   height: 37px;
-  background: rgba(255, 0, 255, 0.3);
+  background-image: url('../img/about-us__icon-flower.svg');
 }
 .about-us__item--banknote::before {
   top: 5px;
   left: 0px;
   width: 47px;
   height: 27px;
-  background: rgba(255, 0, 255, 0.3);
+  background-image: url('../img/about-us__icon-banknote.svg');
 }
 .about-us__item--heart::before {
   top: 10px;
   left: 7px;
   width: 34px;
   height: 27px;
-  background: rgba(255, 0, 255, 0.3);
+  background-image: url('../img/about-us__icon-heart.svg');
 }
 .about-us__item--ball::before {
   top: 7px;
   left: 3px;
   width: 35px;
   height: 34px;
-  background: rgba(255, 0, 255, 0.3);
+  background-image: url('../img/about-us__icon-ball.svg');
 }
 .about-us__item--rocket::before {
   top: 8px;
   left: -6px;
   width: 55px;
   height: 23px;
-  background: rgba(255, 0, 255, 0.3);
+  background-image: url('../img/about-us__icon-rocket.svg');
 }
 .about-us__item--gift::before {
   top: 6px;
   left: 3px;
   width: 33px;
   height: 32px;
-  background: rgba(255, 0, 255, 0.3);
+  background-image: url('../img/about-us__icon-gift.svg');
 }
 @media (min-width: 768px) {
   .about-us {
@@ -986,7 +1000,9 @@ font-family: 'PT Sans', Arial, sans-serif;
     padding-top: 76px;
     padding-left: 50px;
     padding-right: 50px;
-    background-image: linear-gradient(to right, rgba(255, 255, 0, 0.3), rgba(255, 255, 0, 0.3) 350px, #ffffff 350px);
+    background-image: url('../img/reviews__background-desktop-tablet.jpg');
+    background-repeat: no-repeat;
+    background-size: 350px;
     box-sizing: border-box;
   }
   .reviews__header {
@@ -1034,6 +1050,11 @@ font-family: 'PT Sans', Arial, sans-serif;
     width: 175px;
   }
 }
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi), (min-width: 768px) and (min-resolution: 1.5dppx) {
+  .reviews {
+    background-image: url('../img/reviews__background-desktop-tablet@2x.jpg');
+  }
+}
 @media (min-width: 1200px) {
   .reviews {
     width: 1050px;
@@ -1041,6 +1062,7 @@ font-family: 'PT Sans', Arial, sans-serif;
     padding-top: 70px;
     padding-left: 175px;
     padding-right: 50px;
+    background-position: 0px 2px;
   }
   .reviews__header {
     margin-top: 3px;
@@ -1101,8 +1123,12 @@ font-family: 'PT Sans', Arial, sans-serif;
   color: inherit;
   border-bottom: 1px solid #62d1ba;
 }
-.contacts__info-link:hover {
+.contacts__info-link:hover,
+.contacts__info-link:focus {
   color: #62d1ba;
+}
+.contacts__info-link:active {
+  opacity: 0.3;
 }
 .contacts__address {
   width: 183px;
@@ -1142,7 +1168,8 @@ font-family: 'PT Sans', Arial, sans-serif;
     right: 3px;
     width: 47px;
     height: 81px;
-    background: rgba(255, 255, 0, 0.3);
+    background-image: url('../img/contacts__icon-flag.svg');
+    background-repeat: no-repeat;
   }
   .contacts__header {
     width: 100%;
@@ -1194,7 +1221,7 @@ font-family: 'PT Sans', Arial, sans-serif;
   }
   .contacts__info-block::before {
     top: 62px;
-    left: 62px;
+    left: 63px;
     right: auto;
   }
   .contacts__header {
@@ -1246,24 +1273,16 @@ font-family: 'PT Sans', Arial, sans-serif;
   padding: 0;
   list-style-type: none;
 }
-.footer__social-link {
-  display: block;
-  font-size: 0;
+.footer__social-image {
+  fill: #221f1f;
 }
-.footer__social-link--instagram {
-  width: 22px;
-  height: 21px;
-  background: rgba(255, 0, 0, 0.3);
+.footer__social-image:hover,
+.footer__social-image:focus {
+  fill: #46c1ae;
 }
-.footer__social-link--facebook {
-  width: 15px;
-  height: 28px;
-  background: rgba(0, 255, 0, 0.3);
-}
-.footer__social-link--twitter {
-  width: 23px;
-  height: 20px;
-  background: rgba(0, 0, 255, 0.3);
+.footer__social-image:active {
+  fill: #46c1ae;
+  opacity: 0.3;
 }
 .footer__copyright {
   display: flex;
@@ -1277,11 +1296,25 @@ font-family: 'PT Sans', Arial, sans-serif;
   box-sizing: border-box;
 }
 .footer__copyright-link {
+  text-decoration: none;
+  color: #000000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.footer__copyright-link:active {
+  opacity: 0.3;
+}
+.footer__copyright-link:hover .footer__copyright-image,
+.footer__copyright-link:focus .footer__copyright-image {
+  fill: #46c1ae;
+}
+.footer__copyright-image {
+  margin-top: 5px;
+  margin-left: 30px;
   width: 27px;
   height: 34px;
-  margin-left: 30px;
-  font-size: 0px;
-  background: rgba(255, 0, 255, 0.3);
+  fill: #63d1bb;
 }
 @media (min-width: 768px) {
   .footer__wrapper {
@@ -1296,9 +1329,14 @@ font-family: 'PT Sans', Arial, sans-serif;
     width: 182px;
   }
   .footer__logo-image {
-    width: 102px;
-    height: 34px;
-    background: rgba(255, 0, 0, 0.3);
+    fill: #231f20;
+  }
+  .footer__logo-image:hover,
+  .footer__logo-image:focus {
+    fill: #46c1ae;
+  }
+  .footer__logo-image:active {
+    opacity: 0.3;
   }
   .footer__copyright {
     width: 182px;
