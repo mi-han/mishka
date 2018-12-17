@@ -1,18 +1,17 @@
 var gulp = require('gulp');
-var less = require('gulp-less');
-var plumber = require('gulp-plumber');
-var postcss = require('gulp-postcss');
-var minify = require('gulp-csso');
-var filesize = require('gulp-filesize');
-var autoprefixer = require('autoprefixer');
+var run = require('run-sequence');
+var del = require('del'); 
+var rename = require('gulp-rename');
 var server = require('browser-sync').create();
+var plumber = require('gulp-plumber');
+var less = require('gulp-less');
+var minify = require('gulp-csso');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 var imagemin = require('gulp-imagemin');
 var tinypng = require('gulp-tinypng-compress');
 var cwebp = require('gulp-cwebp');
 var svgStore = require('gulp-svgstore');
-var rename = require('gulp-rename');
-var run = require('run-sequence');
-var del = require('del'); 
 
 gulp.task('less', function () {
     gulp.src('./less/style.less')
@@ -25,7 +24,6 @@ gulp.task('less', function () {
         .pipe(minify())
         .pipe(rename('style.min.css'))
         .pipe(gulp.dest('css'))
-        .pipe(filesize())
         .pipe(server.stream());
 });
 

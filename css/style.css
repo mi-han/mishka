@@ -4,14 +4,16 @@ font-family: 'PT Sans', Arial, sans-serif;
 */
 @font-face {
   font-family: 'Open Sans';
-  src: url('../fonts/OpenSans-Bold.woff2') format('woff2'), url('../fonts/OpenSans-Bold.woff') format('woff');
-  font-weight: bold;
+  src: url('/fonts/OpenSans-Regular.woff2') format('woff2'), url('/fonts/OpenSans-Regular.woff') format('woff');
+  font-display: swap;
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Open Sans';
-  src: url('../fonts/OpenSans-Regular.woff2') format('woff2'), url('../fonts/OpenSans-Regular.woff') format('woff');
-  font-weight: normal;
+  src: url('/fonts/OpenSans-Bold.woff2') format('woff2'), url('/fonts/OpenSans-Bold.woff') format('woff');
+  font-display: swap;
+  font-weight: bold;
   font-style: normal;
 }
 .page__body {
@@ -399,14 +401,14 @@ font-family: 'PT Sans', Arial, sans-serif;
   height: 489px;
   padding: 0;
   background-color: #f9f9f9;
-  background-image: url(../../img/house__background-mobile.jpg);
+  background-image: url(/img/house__background-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center -18px;
   background-size: 320px;
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .house {
-    background-image: url(../../img/house__background-mobile@2x.jpg);
+    background-image: url(/img/house__background-mobile@2x.jpg);
   }
 }
 .house__header {
@@ -449,7 +451,7 @@ font-family: 'PT Sans', Arial, sans-serif;
   right: 6px;
   width: 40px;
   height: 62px;
-  background: url(../../img/house__icon-interior.svg);
+  background: url(/img/house__icon-interior.svg);
   opacity: 0.5;
 }
 .house__item--toys .house__link::before {
@@ -459,7 +461,7 @@ font-family: 'PT Sans', Arial, sans-serif;
   right: -4px;
   width: 60px;
   height: 60px;
-  background: url(../../img/house__icon-toys.svg);
+  background: url(/img/house__icon-toys.svg);
   opacity: 0.5;
 }
 .house__link {
@@ -476,7 +478,7 @@ font-family: 'PT Sans', Arial, sans-serif;
 @media (min-width: 768px) {
   .house {
     min-height: 685px;
-    background-image: url(../../img/house__background-desktop-tablet.jpg);
+    background-image: url(/img/house__background-desktop-tablet.jpg);
     background-size: 1150px;
     background-position: center -60px;
   }
@@ -522,7 +524,7 @@ font-family: 'PT Sans', Arial, sans-serif;
 }
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi), (min-width: 768px) and (min-resolution: 1.5dppx) {
   .house {
-    background-image: url(../../img/house__background-desktop-tablet@2x.jpg);
+    background-image: url(/img/house__background-desktop-tablet@2x.jpg);
   }
 }
 @media (min-width: 1200px) {

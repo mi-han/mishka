@@ -24,7 +24,6 @@
     "gulp": "^3.9.1",
     "gulp-csso": "^3.0.1",
     "gulp-cwebp": "^3.0.0",
-    "gulp-filesize": "0.0.6",
     "gulp-imagemin": "^5.0.3",
     "gulp-less": "^4.0.1",
     "gulp-plumber": "^1.2.1",
