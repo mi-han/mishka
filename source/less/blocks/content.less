@@ -2,18 +2,41 @@
     background-color: #f9f9f9;
 }
 
-.content__good-of-week {
-    background-color: #ffffff;
+// планшет
+@media (min-width: @tablet-width) {
+    .content__goods-of-week {
+        position: relative;
+        margin-top: -10px;
+        padding-top: 10px;
+        background-image: url('../img/goods-of-week__background-top-desktop.svg');
+        background-repeat: repeat-x;
+        background-size: 770px;
+        background-position: top center;
+        z-index: 3;
+    }
+}
+// десктоп
+@media (min-width: @desktop-width) {
+    .content__goods-of-week {
+        position: relative;
+        margin-top: -16px;
+        padding-top: 16px;
+        background-image: url('../img/goods-of-week__background-top-desktop.svg');
+        background-repeat: repeat-x;
+        background-size: 1250px;
+        background-position: top center;
+        z-index: 3;
+    }
 }
 
 .content__about-us {
-    background-color: #ffffff;
+
 }
 
 .content__reviews {
-    background-color: #ffffff;
+
 }
 
 .content__contacts {
-    background-color: #ffffff;
+
 }
