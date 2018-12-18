@@ -878,8 +878,11 @@ font-family: 'PT Sans', Arial, sans-serif;
   .about-us {
     width: 700px;
   }
+  .about-us__item {
+    margin-bottom: 55px;
+  }
   .about-us__header {
-    margin-top: 69px;
+    margin-top: 70px;
     font-size: 53px;
     line-height: 57px;
   }
@@ -1097,16 +1100,17 @@ font-family: 'PT Sans', Arial, sans-serif;
     padding-top: 70px;
     padding-left: 175px;
     padding-right: 50px;
-    background-position: 0px 2px;
+    background-position: 0px 0px;
   }
   .reviews__header {
-    margin-top: 3px;
+    margin-top: 0px;
     font-size: 53px;
     line-height: 57px;
   }
   .reviews__item {
     margin-top: 48px;
     padding-right: 50px;
+    line-height: 31px;
   }
   .reviews__item-author {
     padding-top: 12px;
@@ -1115,17 +1119,17 @@ font-family: 'PT Sans', Arial, sans-serif;
   }
   .reviews__nav {
     right: 5px;
-    bottom: 96px;
+    bottom: 99px;
     width: 166px;
   }
   .reviews__send-button {
-    top: 43px;
+    top: 39px;
     right: 0px;
   }
 }
 .contacts {
-  margin-top: 69px;
-  padding-top: 51px;
+  margin-top: 45px;
+  padding-top: 42px;
 }
 .contacts__info-block {
   display: flex;
@@ -1194,6 +1198,7 @@ font-family: 'PT Sans', Arial, sans-serif;
 }
 @media (min-width: 768px) {
   .contacts {
+    margin-top: 69px;
     padding-top: 77px;
   }
   .contacts__info-block {
@@ -1230,6 +1235,7 @@ font-family: 'PT Sans', Arial, sans-serif;
     font-size: 17px;
   }
   .contacts__address {
+    padding-right: 0px;
     width: 256px;
   }
   .contacts__map {
@@ -1255,7 +1261,7 @@ font-family: 'PT Sans', Arial, sans-serif;
     flex-direction: row;
     align-items: flex-start;
     width: 1050px;
-    margin-top: 69px;
+    margin-top: 67px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 105px;
@@ -1288,6 +1294,8 @@ font-family: 'PT Sans', Arial, sans-serif;
     width: 525px;
     min-height: 457px;
     margin-top: 0;
+    background-image: url('../img/contacts__map-desktop.jpg');
+    background-size: 525px;
   }
   .contacts__send-button {
     position: absolute;
@@ -1295,6 +1303,11 @@ font-family: 'PT Sans', Arial, sans-serif;
     left: 175px;
     margin-top: 0;
     margin-bottom: 0;
+  }
+}
+@media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1200px) and (min-resolution: 144dpi), (min-width: 1200px) and (min-resolution: 1.5dppx) {
+  .contacts__map {
+    background-image: url('../img/contacts__map-desktop@2x.jpg');
   }
 }
 .footer {

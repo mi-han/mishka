@@ -1,7 +1,7 @@
 // мобильная
 .contacts {
-    margin-top: 69px;
-    padding-top: 51px;
+    margin-top: 45px;
+    padding-top: 42px;
 }
 .contacts__info-block {
     display: flex;
@@ -71,6 +71,7 @@
 // планшет
 @media (min-width: @tablet-width) {
     .contacts {
+        margin-top: 69px;
         padding-top: 77px;
     }
     .contacts__info-block {
@@ -107,6 +108,7 @@
         font-size: 17px;
     }
     .contacts__address {
+        padding-right: 0px;
         width: 256px;
     }
     .contacts__map {
@@ -133,7 +135,7 @@
         flex-direction: row;
         align-items: flex-start;
         width: 1050px;
-        margin-top: 69px;
+        margin-top: 67px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 105px;
@@ -166,6 +168,12 @@
         width: 525px;
         min-height: 457px;
         margin-top: 0;
+        background-image: url('../img/contacts__map-desktop.jpg');
+        background-size: 525px;
+        // Retina
+        @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+            background-image: url('../img/contacts__map-desktop@2x.jpg');
+        }
     }
     .contacts__send-button {
         position: absolute;
