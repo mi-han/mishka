@@ -38,6 +38,7 @@
     "run-sequence": "^2.2.1"
   },
   "dependencies": {
-    "cwebp": "^2.0.3"
+    "cwebp": "^2.0.3",
+    "svgxuse": "^1.2.6"
   }
 }

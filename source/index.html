@@ -7,6 +7,7 @@
     <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font" crossorigin>
     <link rel="preload" href="fonts/OpenSans-Bold.woff2" as="font" crossorigin>
     <link href="css/style.min.css" rel="stylesheet">
+    <script defer src="node_modules/svgxuse/svgxuse.js"></script>
 </head>
 <body class="page__body">
 
@@ -15,9 +16,9 @@
         <div class="header__logo">
             <a class="header__logo-link" href="#">
                 <picture>
-                    <source media="(min-width: 1200px)" srcset="img/header__logo-desktop.svg">
-                    <source media="(min-width: 768px)" srcset="img/header__logo-tablet.svg">
-                    <img class="header__logo-image" src="img/header__logo-mobile.svg" width="149" height="72" alt="Мишка">
+                    <source media="(max-width: 767px)" srcset="img/header__logo-mobile.svg">
+                    <source media="(max-width: 1199px)" srcset="img/header__logo-tablet.svg">
+                    <img class="header__logo-image" src="img/header__logo-desktop.svg" alt="Мишка">
                 </picture>
             </a>
             <a class="header__sandwich-icon">Показать навигацию</a>
@@ -31,11 +32,21 @@
             </li>
         </ul>
         <ul class="header__user-list  header__user-list--hidden">
-            <li class="header__user-item header__user-item--search">
-                <a class="header__user-link"  href="#">Поиск по сайту</a>
+            <li class="header__user-item">
+                <a class="header__user-link"  href="#">
+                    <svg class="header__user-icon header__user-icon--search" width="18" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="img/sprite.svg#sprite--header__icon-search"></use>
+                    </svg>
+                    <span class="header__user-link-text header__user-link-text--hide">Поиск по сайту</span>
+                </a>
             </li>
-            <li class="header__user-item header__user-item--basket">
-                <a class="header__user-link"  href="#">Корзина: <span>пока пуста</span></a>
+            <li class="header__user-item">
+                <a class="header__user-link"  href="#">
+                    <svg class="header__user-icon header__user-icon--basket" width="21" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="img/sprite.svg#sprite--header__icon-basket"></use>
+                    </svg>
+                   <span class="header__user-link-text">Корзина: <span class="header__basket-value">пока пуста</span></span>
+                    </a>
             </li>
         </ul>
         <ul class="header__ad-list">
@@ -93,9 +104,9 @@
             </div>
             <div class="goods-of-week__image-block">
                 <picture>
-                    <source media="(min-width: 1200px)" srcset="img/goods-of-week__desktop.jpg 1x, img/goods-of-week__desktop@2x.jpg 2x, img/goods-of-week__desktop@3x.jpg 3x, img/goods-of-week__desktop@4x.jpg 4x">
-                    <source media="(min-width: 768px)" srcset="img/goods-of-week__tablet.jpg 1x, img/goods-of-week__tablet@2x.jpg 2x, img/goods-of-week__tablet@3x.jpg 3x, img/goods-of-week__tablet@4x.jpg 4x">
-                    <img class="goods-of-week__image" src="img/goods-of-week__mobile.jpg" srcset="img/goods-of-week__mobile@2x.jpg 2x, img/goods-of-week__mobile@3x.jpg 3x, img/goods-of-week__mobile@4x.jpg 4x" alt="Вязаные корзинки">
+                    <source media="(max-width: 767px)" srcset="img/goods-of-week__mobile.jpg 1x, img/goods-of-week__mobile@2x.jpg 2x, img/goods-of-week__mobile@3x.jpg 3x, img/goods-of-week__mobile@4x.jpg 4x">
+                    <source media="(max-width: 1199px)" srcset="img/goods-of-week__tablet.jpg 1x, img/goods-of-week__tablet@2x.jpg 2x, img/goods-of-week__tablet@3x.jpg 3x, img/goods-of-week__tablet@4x.jpg 4x">
+                    <img class="goods-of-week__image" src="img/goods-of-week__desktop.jpg" srcset="img/goods-of-week__desktop@2x.jpg 2x, img/goods-of-week__desktop@3x.jpg 3x, img/goods-of-week__desktop@4x.jpg 4x" alt="Вязаные корзинки">
                 </picture>
             </div>
         </section>

@@ -10,33 +10,60 @@
         padding-top: 10px;
         background-image: url('../img/goods-of-week__background-top-desktop.svg');
         background-repeat: repeat-x;
-        background-size: 770px;
-        background-position: top center;
+        background-size: 770px 24px;
+        background-position: center top;
         z-index: 3;
     }
 }
 // десктоп
 @media (min-width: @desktop-width) {
     .content__goods-of-week {
-        position: relative;
         margin-top: -16px;
         padding-top: 16px;
-        background-image: url('../img/goods-of-week__background-top-desktop.svg');
-        background-repeat: repeat-x;
-        background-size: 1250px;
-        background-position: top center;
-        z-index: 3;
+        background-size: 1250px 38px;
     }
 }
 
+// мобильная
 .content__about-us {
-
+    background-image: url('../img/background-line.svg');
+    background-size: 320px 8px;
+    background-repeat: repeat-x;
+    background-position: top center;
+}
+// планшет
+@media (min-width: @tablet-width) {
+    .content__about-us {
+        background-size: 770px 17px;
+    }  
+}
+// десктоп
+@media (min-width: @desktop-width) {
+    .content__about-us {
+        background-size: 1050px 23px;
+        background-position: center 21px;
+        background-repeat: no-repeat;
+    }  
 }
 
-.content__reviews {
-
-}
-
+// мобильная
 .content__contacts {
-
+    background-image: url('../img/background-line.svg');
+    background-repeat: repeat-x;
+    background-position: top center;
+    background-size: 320px 8px;
+}
+// планшет
+@media (min-width: @tablet-width) {
+    .content__contacts {
+        background-size: 770px 17px;
+    }  
+}
+// десктоп
+@media (min-width: @desktop-width) {
+    .content__contacts {
+        background-size: 1050px 23px;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }  
 }
