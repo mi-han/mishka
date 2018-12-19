@@ -1578,7 +1578,7 @@ font-family: 'PT Sans', Arial, sans-serif;
 @media (min-width: 768px) {
   .video-made {
     width: 668px;
-    margin-bottom: 28px;
+    margin-bottom: 63px;
   }
   .video-made__header {
     font-size: 20px;
@@ -1607,6 +1607,7 @@ font-family: 'PT Sans', Arial, sans-serif;
     position: relative;
     width: 1050px;
     height: 457px;
+    margin-bottom: 105px;
     padding-left: 706px;
     padding-right: 0px;
     box-sizing: border-box;
