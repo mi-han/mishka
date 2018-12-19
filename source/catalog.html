@@ -1,0 +1,95 @@
+<include src="source/html/header.html"></include>
+
+<main class="content">
+    <h1 class="content__header">Каталог товаров</h1>
+    <div class="content__catalog">
+        <section class="catalog">
+            <ul class="catalog__list">
+                <li class="catalog__item">
+                    <a class="catalog__item-image-link" href="#">
+                        <picture>
+                            <source type="image/webp" media="(max-width: 767px)" srcset="img/catalog__item1-mobile.webp 1x, img/catalog__item1-mobile@2x.webp 2x, img/catalog__item1-mobile@3x.webp 3x">
+                            <source type="image/webp" media="(max-width: 1199px)" srcset="img/catalog__item1-tablet.webp 1x, img/catalog__item1-tablet@2x.webp 2x, img/catalog__item1-tablet@3x.webp 3x">
+                            <source type="image/webp" srcset="img/catalog__item1-desktop.webp 1x, img/catalog__item1-desktop@2x.webp 2x, img/catalog__item1-desktop@3x.webp 3x">
+                            <source media="(max-width: 767px)" srcset="img/catalog__item1-mobile.jpg 1x, img/catalog__item1-mobile@2x.jpg 2x, img/catalog__item1-mobile@3x.jpg 3x">
+                            <source media="(max-width: 1199px)" srcset="img/catalog__item1-tablet.jpg 1x, img/catalog__item1-tablet@2x.jpg 2x, img/catalog__item1-tablet@3x.jpg 3x">
+                            <img class="catalog__item-image" src="img/catalog__item1-desktop.jpg" srcset="img/catalog__item1-desktop@2x.jpg 2x, img/catalog__item1-desktop@3x.jpg 3x" alt="Зайчик-попрыгайчик">
+                        </picture>
+                    </a>
+                    <div class="catalog__item-desc">
+                        <h2 class="catalog__item-header">Зайчик-попрыгайчик</h2>
+                        <p class="catalog__item-spec">Рост 30 см, вес 200 г</p>
+                        <footer class="catalog__item-footer">
+                            <b class="catalog__item-price">1 200 руб.</b>
+                            <a class="catalog__item-button" href="#">
+                                <svg class="catalog__button-image" width="21" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <use xlink:href="img/sprite.svg#sprite--header__icon-basket"></use>
+                                </svg>
+                            </a>
+                        </footer>
+                    </div>
+                </li>
+                <li class="catalog__item">
+                    <a class="catalog__item-image-link" href="#">
+                        <picture>
+                            <source type="image/webp" media="(max-width: 767px)" srcset="img/catalog__item2-mobile.webp 1x, img/catalog__item2-mobile@2x.webp 2x, img/catalog__item2-mobile@3x.webp 3x">
+                            <source type="image/webp" media="(max-width: 1199px)" srcset="img/catalog__item2-tablet.webp 1x, img/catalog__item2-tablet@2x.webp 2x, img/catalog__item2-tablet@3x.webp 3x">
+                            <source type="image/webp" srcset="img/catalog__item2-desktop.webp 1x, img/catalog__item2-desktop@2x.webp 2x, img/catalog__item2-desktop@3x.webp 3x">
+                            <source media="(max-width: 767px)" srcset="img/catalog__item2-mobile.jpg 1x, img/catalog__item2-mobile@2x.jpg 2x, img/catalog__item2-mobile@3x.jpg 3x">
+                            <source media="(max-width: 1199px)" srcset="img/catalog__item2-tablet.jpg 1x, img/catalog__item2-tablet@2x.jpg 2x, img/catalog__item2-tablet@3x.jpg 3x">
+                            <img class="catalog__item-image" src="img/catalog__item2-desktop.jpg" srcset="img/catalog__item2-desktop@2x.jpg 2x, img/catalog__item2-desktop@3x.jpg 3x" alt="Корзинка для белья">
+                        </picture>
+                    </a>
+                    <div class="catalog__item-desc">
+                        <h2 class="catalog__item-header">Корзинка для белья</h2>
+                        <p class="catalog__item-spec">Диаметр 15 см, высота 10 см</p>
+                        <footer class="catalog__item-footer">
+                            <b class="catalog__item-price">690 руб.</b>
+                            <a class="catalog__item-button" href="#">
+                                <svg class="catalog__button-image" width="21" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <use xlink:href="img/sprite.svg#sprite--header__icon-basket"></use>
+                                </svg>
+                            </a>
+                        </footer>
+                    </div>
+                </li>
+                <li class="catalog__item">
+                    <a class="catalog__item-image-link" href="#">
+                        <picture>
+                            <source type="image/webp" media="(max-width: 767px)" srcset="img/catalog__item3-mobile.webp 1x, img/catalog__item3-mobile@2x.webp 2x, img/catalog__item3-mobile@3x.webp 3x">
+                            <source type="image/webp" media="(max-width: 1199px)" srcset="img/catalog__item3-tablet.webp 1x, img/catalog__item3-tablet@2x.webp 2x, img/catalog__item3-tablet@3x.webp 3x">
+                            <source type="image/webp" srcset="img/catalog__item3-desktop.webp 1x, img/catalog__item3-desktop@2x.webp 2x, img/catalog__item3-desktop@3x.webp 3x">
+                            <source media="(max-width: 767px)" srcset="img/catalog__item3-mobile.jpg 1x, img/catalog__item3-mobile@2x.jpg 2x, img/catalog__item3-mobile@3x.jpg 3x">
+                            <source media="(max-width: 1199px)" srcset="img/catalog__item3-tablet.jpg 1x, img/catalog__item3-tablet@2x.jpg 2x, img/catalog__item3-tablet@3x.jpg 3x">
+                            <img class="catalog__item-image" src="img/catalog__item3-desktop.jpg" srcset="img/catalog__item3-desktop@2x.jpg 2x, img/catalog__item3-desktop@3x.jpg 3x" alt="Большая корзинка для игрушек">
+                        </picture>
+                    </a>
+                    <div class="catalog__item-desc">
+                        <h2 class="catalog__item-header">Большая корзинка <span class="wrap">для игрушек</span></h2>
+                        <p class="catalog__item-spec">Диаметр 30 см, высота 30 см</p>
+                        <footer class="catalog__item-footer">
+                            <b class="catalog__item-price">1 500 руб.</b>
+                            <a class="catalog__item-button" href="#">
+                                <svg class="catalog__button-image" width="21" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <use xlink:href="img/sprite.svg#sprite--header__icon-basket"></use>
+                                </svg>
+                            </a>
+                        </footer>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="content__video-made">
+        <section class="video-made">
+            <h3 class="video-made__header">Процесс производства</h3>
+            <div class="video-made__video"><button class="video-made__play-button" type="button">Проиграть видео</button></div>
+            <p class="video-made__about-text">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
+            <div class="video-made__button">
+                <button class="button" type="button">Сделать заказ</button> 
+            </div>
+        </section>
+    </div>
+</main>
+
+<include src="source/html/footer.html"></include>
